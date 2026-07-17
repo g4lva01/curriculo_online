@@ -1,34 +1,47 @@
-# React + TypeScript + Vite
+# Gabriel - Portfólio Full Stack Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Portfólio pessoal moderno e interativo desenvolvido para apresentar minha trajetória como desenvolvedor Full Stack.
 
-Currently, two official plugins are available:
+## ✨ Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este é o meu portfólio online, construído como uma Single Page Application (SPA) com navegação fluida, alternância de temas (claro/escuro) e design responsivo.
 
-## React Compiler
+O foco foi criar uma experiência elegante, rápida e profissional, destacando minhas habilidades, projetos e trajetória acadêmica/profissional.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🚀 Funcionalidades
 
-Note: This will impact Vite dev & build performances.
+- **Modo Claro e Escuro** com persistência de preferência
+- Menu superior fixo (sticky) com rolagem suave (`smooth scroll`)
+- Design totalmente responsivo (mobile-first)
+- Seções interativas e bem organizadas
+- Animações sutis e transições elegantes
+- Otimizado para performance (Vite)
 
-## Expanding the Oxlint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **Framework**: React + TypeScript
+- **Build Tool**: Vite
+- **Estilização**: Styled Components
+- **Gerenciamento de Estado**: React Context
+- **Ícones**: Lucide React
+- **Deploy**: Vercel
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## 📋 Seções
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 1. Resumo (Hero)
+Apresentação inicial com foto, resumo profissional e chamadas para ação.
+
+### 2. Sobre Mim
+Informações detalhadas sobre minha formação, habilidades técnicas, ferramentas e hobbies.
+
+### 3. Meus Projetos
+Galeria de projetos com cards contendo descrição, tecnologias, screenshot e links para GitHub/Demo.
+
+### 4. Currículo
+Área dedicada ao currículo com opção de download e visualização do PDF.
+
+## 🎨 Design
+
+- **Modo Claro**: Fundo `#F8F9FA` e cor principal Azul Royal (`#1D4ED8`)
+- **Modo Escuro**: Fundo `#121212` e cor principal Vermelho Escuro (`#EF4444`)
+- Inspiração em portfólios minimalistas e elegantes com bom uso de espaço em branco.
