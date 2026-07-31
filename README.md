@@ -45,3 +45,21 @@ Galeria de projetos com cards contendo descrição, tecnologias, screenshot e li
 - **Modo Claro**: Fundo `#F8F9FA` e cor principal Azul Royal (`#1D4ED8`)
 - **Modo Escuro**: Fundo `#121212` e cor principal Vermelho Escuro (`#EF4444`)
 - Inspiração em portfólios minimalistas e elegantes com bom uso de espaço em branco.
+
+## 👥 Equipe
+
+Este projeto foi desenvolvido de forma colaborativa, unindo gestão, planejamento e desenvolvimento de software.
+
+| Integrante | Responsabilidade |
+|------------|------------------|
+| **Charles Pereira Marcelino Júnior** | Gestão do Projeto, Product Owner, Planejamento, Organização das Sprints, Documentação e Acompanhamento do Desenvolvimento |
+| **Gabriel Galvão Soares Silva** | Desenvolvimento Full Stack |
+| **Henrique Gonçalves de Moura** | Desenvolvimento Full Stack |
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **MIT License**.
+
+Consulte o arquivo `LICENSE` para mais informações.
