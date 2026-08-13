@@ -130,7 +130,7 @@ body {
   color: var(--primary-dark);
 }
 .light-theme .badge-available {
-  background-color: rgba(0, 0, 24F, 0.1);
+  background-color: rgba(0, 0, 255, 0.1);
   color: var(--primary-light);
 }
 
@@ -190,6 +190,12 @@ body {
 .dark-theme .btn-secondary:hover { background-color: #1E293B; }
 .light-theme .btn-secondary { border: 1px solid #CBD5E1; color: var(--text-light); }
 .light-theme .btn-secondary:hover { background-color: #F1F5F9; }
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
 /* Foto de Perfil e Badges */
 .profile-container { position: relative; }
