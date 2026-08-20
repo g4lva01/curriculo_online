@@ -100,7 +100,7 @@ const App: React.FC = () => {
 
           {/* Botão do LinkedIn */}
           <a 
-            href="https://www.linkedin.com/in/seu-usuario-linkedin" 
+            href="https://www.linkedin.com/in/gabriel-g4lva0/" 
             target="_blank" 
             rel="noreferrer" 
             className="github-btn"
