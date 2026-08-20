@@ -6,6 +6,7 @@ interface Projeto {
   titulo: string;
   descricao: string;
   tags: string[];
+  githubUrl: string;
 }
 
 const App: React.FC = () => {
@@ -14,39 +15,45 @@ const App: React.FC = () => {
   const listaProjetos: Projeto[] = [
     {
       id: 1,
-      titulo: "Extrator de Palavras-chave com N-Gramas",
-      descricao: "Aplicação web para extrair palavras-chave de cauda longa usando algoritmos de N-Gramas com análise de frequência.",
-      tags: ["Java", "Vite", "Spring Boot", "PostgreSQL"],
+      titulo: "Geek Opinião",
+      descricao: "Um blog moderno construído em Angular 19 dedicado a centralizar análises, resenhas e opiniões sobre o ecossistema Geek.",
+      tags: ["HTML", "CSS", "TypeScript", "JavaScript", "Angular"],
+      githubUrl: "https://github.com/g4lva01/Geek-opiniao",
     },
     {
       id: 2,
-      titulo: "Gerador de Senhas Aleatórias",
-      descricao: "Ferramenta web para gerar senhas seguras com critérios personalizáveis, caracteres especiais, números e letras.",
+      titulo: "Processamento de Imagem",
+      descricao: "Projeto que realizar modificações em imagens selecionadas pelo usuário.",
       tags: ["JavaScript", "HTML", "CSS"],
+      githubUrl: "https://github.com/g4lva01/processamento-de-imagem",
     },
     {
       id: 3,
-      titulo: "CRUD de Clientes em JavaScript",
-      descricao: "Sistema completo de gerenciamento de clientes com criação, leitura, atualização e exclusão utilizando localStorage.",
+      titulo: "Pokédex",
+      descricao: "Projeto que simular uma Pokédex.",
       tags: ["JavaScript", "HTML", "CSS"],
+      githubUrl: "https://github.com/g4lva01/Pokedex",
     },
     {
       id: 4,
-      titulo: "Sistema de Cadastro de Alunos",
-      descricao: "Aplicação desktop para gerenciamento de cadastro de alunos com integração a banco de dados MySQL.",
-      tags: ["Java", "MySQL", "JDBC"],
+      titulo: "Sistema de Gestão para Escola Bíblica Dominical",
+      descricao: "Sistema Web para informatizar a gestão da Escola Bíblica Dominical.",
+      tags: ["Angular", "TypeScript", "HTML", "CSS", "Java", "Spring Boot", "MySQL"],
+      githubUrl: "https://github.com/g4lva01/TCC",
     },
     {
       id: 5,
-      titulo: "Currículo Online",
-      descricao: "Currículo web responsivo e interativo, desenvolvido com HTML e CSS puros para apresentação pessoal.",
-      tags: ["HTML", "CSS", "JavaScript"],
+      titulo: "Duelo de Honra",
+      descricao: "Duelo de Honra é um jogo de luta desenvolvido em C# e Unity que busca eliminar a complexidade excessiva do gênero, oferecendo controles simples, aprendizado rápido e partidas dinâmicas e acessíveis.",
+      tags: ["C#"],
+      githubUrl: "https://github.com/g4lva01/Duelo_de_honra",
     },
     {
       id: 6,
-      titulo: "Gerador de QR Code",
-      descricao: "Aplicação web que gera QR Codes personalizados a partir de URLs ou textos com opções de download.",
-      tags: ["Python", "Flask", "qrcode"],
+      titulo: "Poke-Card",
+      descricao: "Projeto simular um Poke-Card.",
+      tags: ["TypeScript", "JavaScript", "HTML", "CSS"],
+      githubUrl: "https://github.com/g4lva01/Poker-card",
     }
   ];
 
@@ -322,7 +329,7 @@ const App: React.FC = () => {
                 <div className="project-card-header">
                   <span className="code-icon" aria-hidden="true">&lt;/&gt;</span>
                   <ul className="tags" style={{ display: 'flex', gap: '0.5rem', listStyle: 'none', paddingLeft: 0 }}>
-                    {proj.tags.slice(0, 3).map(t => (
+                    {proj.tags.slice(0, 7).map(t => (
                       <li key={t} className="tag">{t}</li>
                     ))}
                   </ul>
@@ -338,18 +345,11 @@ const App: React.FC = () => {
                 
                 <div className="project-links">
                   <a 
-                    href="#github" 
+                    href={proj.githubUrl}
                     className="project-link github"
                     aria-label={`Ver código-fonte do projeto ${proj.titulo} no GitHub`}
                   >
                     GitHub
-                  </a>
-                  <a 
-                    href="#demo" 
-                    className="project-link demo"
-                    aria-label={`Ver demonstração interativa do projeto ${proj.titulo}`}
-                  >
-                    Ver Demo <span aria-hidden="true">➔</span>
                   </a>
                 </div>
               </article>
