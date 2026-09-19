@@ -62,6 +62,17 @@ const App: React.FC = () => {
       nomeArquivo: string;
       iframeTitle: string;
     };
+    contato: {
+      tag: string;
+      titulo: string;
+      descricao: string;
+      email: string;
+      telefone: string;
+      whatsappNumero: string;
+      localizacao: string;
+      emailAria: string;
+      telefoneAria: string;
+    };
     footer: string;
   }> = {
     pt: {
@@ -157,6 +168,17 @@ const App: React.FC = () => {
         nomeArquivo: "Curriculo_Gabriel_Galvao.pdf",
         iframeTitle: "Visualizador de PDF - Currículo de Gabriel Galvão"
       },
+      contato: {
+        tag: "04. Contato",
+        titulo: "Entre em contato",
+        descricao: "Estou aberto a oportunidades como Desenvolvedor Full Stack. Respondo em até dois dias úteis.",
+        email: "gabrielgalvao010@gmail.com",
+        telefone: "+55 (61) 98621-3527",
+        whatsappNumero: "5561986213527",
+        localizacao: "Brasília - DF, Brasil",
+        emailAria: "Enviar e-mail para Gabriel",
+        telefoneAria: "Conversar com Gabriel no WhatsApp"
+      },
       footer: "© 2026 Gabriel. Portfólio Desenvolvido com Foco em Acessibilidade e Performance."
     },
     en: {
@@ -251,6 +273,17 @@ const App: React.FC = () => {
         descricao: "View my academic and professional resume directly in the browser or use the download buttons to save a PDF copy.",
         nomeArquivo: "Resume_Gabriel_Galvao.pdf",
         iframeTitle: "PDF Viewer - Gabriel Galvão's Resume"
+      },
+      contato: {
+        tag: "04. Contact",
+        titulo: "Get in touch",
+        descricao: "I am open to Full Stack Developer opportunities. I reply within two business days.",
+        email: "gabrielgalvao010@gmail.com",
+        telefone: "+55 (61) 98621-3527",
+        whatsappNumero: "5561986213527",
+        localizacao: "Brasília - DF, Brazil",
+        emailAria: "Send email to Gabriel",
+        telefoneAria: "Chat with Gabriel on WhatsApp"
       },
       footer: "© 2026 Gabriel. Portfolio Built with Accessibility and Performance Focus."
     }
@@ -691,6 +724,169 @@ const App: React.FC = () => {
               />
             </div>
           </div>
+        </section>
+
+        {/* SEÇÃO CONTATO */}
+        <section id="contato" className="section-wrapper" style={{ paddingBottom: '5rem' }} aria-labelledby="titulo-contato">
+          <div style={{
+            width: '100%',
+            maxWidth: '900px',
+            margin: '0 auto',
+            background: isDarkMode ? '#111625' : '#F8FAFC',
+            border: isDarkMode ? '1px solid #222222' : '1px solid #E2E8F0',
+            borderRadius: '16px',
+            padding: '3rem 2.5rem',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+            display: 'grid',
+            gridTemplateColumns: '1.2fr 0.8fr',
+            gap: '2rem',
+            alignItems: 'center'
+          }}>
+              {/* Coluna de Informações de Contato */}
+                  <div>
+                    <span className="section-tag" style={{ color: isDarkMode ? '#FF0000' : '#0000FF' }}>
+                      {conteudos[idioma].contato.tag}
+                    </span>
+                    <h2 id="titulo-contato" className="section-title" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
+                      {conteudos[idioma].contato.titulo}
+                    </h2>
+                    <p style={{ lineHeight: '1.6', opacity: 0.85, fontSize: '0.95rem', marginBottom: '2rem' }}>
+                      {conteudos[idioma].contato.descricao}
+                    </p>
+
+                    {/* Lista com Ícones e Dados */}
+                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', opacity: 0.9 }}>
+                        <span style={{ color: isDarkMode ? '#FF0000' : '#0000FF', display: 'flex', alignItems: 'center' }} aria-hidden="true">
+                          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </span>
+                        <a 
+                          href={`mailto:${conteudos[idioma].contato.email}`} 
+                          aria-label={conteudos[idioma].contato.emailAria} 
+                          style={{ color: 'inherit', textDecoration: 'none' }}
+                        >
+                          {conteudos[idioma].contato.email}
+                        </a>
+                      </li>
+
+                      <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', opacity: 0.9 }}>
+                        <span style={{ color: isDarkMode ? '#FF0000' : '#0000FF', display: 'flex', alignItems: 'center' }} aria-hidden="true">
+                          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                          </svg>
+                        </span>
+                        <a 
+                          href={`https://wa.me/${conteudos[idioma].contato.whatsappNumero}?text=${encodeURIComponent(
+                            idioma === 'pt' 
+                              ? 'Olá Gabriel, vi seu portfólio e gostaria de conversar!' 
+                              : 'Hi Gabriel, I saw your portfolio and would like to chat!'
+                          )}`}
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          aria-label={conteudos[idioma].contato.telefoneAria} 
+                          style={{ color: 'inherit', textDecoration: 'none' }}
+                        >
+                          {conteudos[idioma].contato.telefone}
+                        </a>
+                      </li>
+
+                      <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', opacity: 0.9 }}>
+                        <span style={{ color: isDarkMode ? '#FF0000' : '#0000FF', display: 'flex', alignItems: 'center' }} aria-hidden="true">
+                          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                        </span>
+                        {conteudos[idioma].contato.localizacao}
+                      </li>
+                    </ul>
+
+                    {/* Botões das Redes Sociais */}
+                    <div style={{ display: 'flex', gap: '0.75rem' }}>
+                      <a
+                        href="https://www.linkedin.com/in/gabriel-g4lva0/"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={conteudos[idioma].linkedinAria}
+                        style={{
+                          width: '40px',
+                          height: '40px',
+                          borderRadius: '50%',
+                          border: isDarkMode ? '1px solid rgba(255,255,255,0.2)' : '1px solid #CBD5E1',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'inherit'
+                        }}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill={isDarkMode ? '#FF0000' : '#0000FF'} aria-hidden="true">
+                          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                      </a>
+
+                      <a
+                        href="https://github.com/g4lva01"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={conteudos[idioma].githubAria}
+                        style={{
+                          width: '40px',
+                          height: '40px',
+                          borderRadius: '50%',
+                          border: isDarkMode ? '1px solid rgba(255,255,255,0.2)' : '1px solid #CBD5E1',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'inherit'
+                        }}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill={isDarkMode ? '#FF0000' : '#0000FF'} aria-hidden="true">
+                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                        </svg>
+                      </a>
+
+                      <a
+                        href={`mailto:${conteudos[idioma].contato.email}`}
+                        aria-label={conteudos[idioma].contato.emailAria}
+                        style={{
+                          width: '40px',
+                          height: '40px',
+                          borderRadius: '50%',
+                          border: isDarkMode ? '1px solid rgba(255,255,255,0.2)' : '1px solid #CBD5E1',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'inherit'
+                        }}
+                      >
+                        <svg width="16" height="16" fill="none" stroke={isDarkMode ? '#FF0000' : '#0000FF'} strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Coluna do Ícone Ilustrativo (Envelope 3D/Vetor) */}
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <div style={{
+                      width: '180px',
+                      height: '130px',
+                      background: isDarkMode ? '#1E293B' : '#DBEAFE',
+                      borderRadius: '16px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+                      position: 'relative'
+                    }}>
+                      <svg width="70" height="70" fill={isDarkMode ? '#FF0000' : '#0000FF'} viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
         </section>
 
       </main>
